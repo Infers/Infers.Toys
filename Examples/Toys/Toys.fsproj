@@ -79,21 +79,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <ProjectReference Include="..\..\Libs\Infers\Infers.fsproj">
-      <Project>{B06B1B50-16C3-42C0-A820-59BBA70EA601}</Project>
-      <Name>Infers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Libs\Infers.Toys\Infers.Toys.fsproj">
       <Project>{A3D6D823-6F26-45CB-8BF2-CB61D6246A68}</Project>
       <Name>Infers.Toys</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libs\Infers.Core\Infers.Core.csproj">
-      <Project>{DD618307-19AC-4667-BD22-6CC10BBC7BF5}</Project>
-      <Name>Infers.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libs\Infers.Rep\Infers.Rep.fsproj">
-      <Project>{2399EAEA-7668-48BA-91B4-162060CB050F}</Project>
-      <Name>Infers.Rep</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\.paket\paket.targets" />
@@ -186,6 +174,33 @@
       <ItemGroup>
         <Reference Include="FSharp.Core">
           <HintPath>..\..\packages\FSharp.Core\lib\portable-net45+netcore45+wpa81+wp8\FSharp.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Infers.Core">
+          <HintPath>..\..\packages\Infers\lib\net45\Infers.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Infers">
+          <HintPath>..\..\packages\Infers\lib\net45\Infers.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Infers.Rep">
+          <HintPath>..\..\packages\Infers.Rep\lib\net45\Infers.Rep.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

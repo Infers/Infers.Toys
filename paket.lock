@@ -3,5 +3,10 @@ NUGET
   specs:
     FParsec (1.0.2)
     FSharp.Core (4.0.0.1)
+    Infers (0.2.3)
+      FSharp.Core (>= 3.1.2.5)
+    Infers.Rep (0.2.3)
+      FSharp.Core (>= 3.1.2.5)
+      Infers (>= 0.2.3)
     PPrint (2.0)
       FSharp.Core (>= 3.1.2.5)
